@@ -11,10 +11,10 @@ var diceGame = {
   },
 
   setStartTime: function() {
-    if (this.rounds.length == 0) {
+    if (this.rounds.length === 0) {
       var now = moment();
       this.startTime = now;
-      document.querySelector("footer").innerHTML = "Game Started " + now.format("YYYY-MM-DD [at] HH:mm")
+      document.querySelector("footer").innerHTML = "Game Started " + now.format("YYYY-MM-DD [at] HH:mm");
     }
   },
 
@@ -32,16 +32,16 @@ var diceGame = {
     var combination = this.rounds[this.rounds.length - 1];
     if (combination == 7 || combination == 11) {
       var secondsToWin = Math.round((moment() - this.startTime) / 1000);
-      document.querySelector("header").innerHTML = "Winner!"
-      document.querySelector("h3").innerHTML = "(It took you " + (this.rounds.length) + " tries and " +  secondsToWin + " seconds)"
+      document.querySelector("header").innerHTML = "Winner!";
+      document.querySelector("h3").innerHTML = "(It took you " + (this.rounds.length) + " tries and " +  secondsToWin + " seconds)";
     } else {
-      document.querySelector("header").innerHTML = "Try Again"
+      document.querySelector("header").innerHTML = "Try Again";
     }
   },
 
   init: function() {
     this.rollBtn.addEventListener('click', this.diceRollHandler.bind(this));
   }
-}
+};
 
 diceGame.init();
