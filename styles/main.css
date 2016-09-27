@@ -2,7 +2,19 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -11,7 +23,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
@@ -23,10 +36,7 @@ ol, ul {
 blockquote, q {
   quotes: none; }
 
-blockquote:before, blockquote:after {
-  content: '';
-  content: none; }
-
+blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none; }
@@ -38,6 +48,21 @@ table {
 *, *:before, *:after {
   box-sizing: border-box; }
 
+header, h3, footer {
+  text-align: center;
+  font-family: sans-serif; }
+
+header {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px; }
+
+h3 {
+  line-height: 1.4; }
+
+footer {
+  padding-bottom: 3%; }
+
 body {
   background: #EEE;
   width: 100%; }
@@ -48,6 +73,7 @@ body {
   border: 1px solid black;
   height: 350px;
   margin: 5% auto;
+  padding-top: 3%;
   position: relative;
   width: 500px; }
   .container button {
@@ -59,19 +85,19 @@ body {
     height: 15%;
     left: 35%;
     position: absolute;
-    top: 56%;
+    top: 65%;
     width: 30%; }
   .container .dice {
     background: #DDD;
     border: 1px solid black;
     font-family: sans-serif;
-    font-size: 30px;
+    font-size: 36px;
     height: 80px;
     margin: 0;
     padding: 4%;
     position: absolute;
     text-align: center;
-    top: 25%;
+    top: 35%;
     width: 80px; }
     .container .dice:first-of-type {
       left: 25%; }
@@ -80,6 +106,7 @@ body {
 
 footer {
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  width: 100%; }
 
 /*# sourceMappingURL=main.css.map */
