@@ -4,27 +4,10 @@ var diceGame = {
   dice: document.getElementsByClassName('dice'),
   rollBtn: document.getElementById('rollBtn'),
 
-  diceRoll: function() {
+  diceRollHandler: function() {
     this.setStartTime();
-    var sum = 0;
-    for (var index = 0; index < this.dice.length; index++) {
-      var diceValue = Math.floor(Math.random() * 6) + 1;
-      sum += diceValue;
-      this.dice[index].innerHTML = diceValue.toString();
-    }
-    this.rounds.push(sum);
+    this.diceRoll();
     this.checkForWinningCombinations();
-  },
-
-  checkForWinningCombinations: function() {
-    var sum = this.rounds[this.rounds.length - 1];
-    if (sum == 7 || sum == 11) {
-      var secondsToWin = Math.round((moment() - this.startTime) / 1000);
-      document.querySelector("header").innerHTML = "Winner!"
-      document.querySelector("h3").innerHTML = "(It took you " + (this.rounds.length) + " tries and " +  secondsToWin + " seconds)"
-    } else {
-      document.querySelector("header").innerHTML = "Try Again"
-    }
   },
 
   setStartTime: function() {
@@ -35,8 +18,29 @@ var diceGame = {
     }
   },
 
+  diceRoll: function() {
+    var sum = 0;
+    for (var index = 0; index < this.dice.length; index++) {
+      var diceValue = Math.floor(Math.random() * 6) + 1;
+      sum += diceValue;
+      this.dice[index].innerHTML = diceValue.toString();
+    }
+    this.rounds.push(sum);
+  },
+
+  checkForWinningCombinations: function() {
+    var combination = this.rounds[this.rounds.length - 1];
+    if (combination == 7 || combination == 11) {
+      var secondsToWin = Math.round((moment() - this.startTime) / 1000);
+      document.querySelector("header").innerHTML = "Winner!"
+      document.querySelector("h3").innerHTML = "(It took you " + (this.rounds.length) + " tries and " +  secondsToWin + " seconds)"
+    } else {
+      document.querySelector("header").innerHTML = "Try Again"
+    }
+  },
+
   init: function() {
-    this.rollBtn.addEventListener('click', this.diceRoll.bind(this));
+    this.rollBtn.addEventListener('click', this.diceRollHandler.bind(this));
   }
 }
 
